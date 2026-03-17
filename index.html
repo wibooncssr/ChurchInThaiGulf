@@ -3,215 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Churches of Samui Island</title>
+    <title>Catholic Churches of Samui & Phangan</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #d4af37; /* Gold accent */
-            --light: #f4f7f6;
-            --text: #333;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            margin: 0;
-            background-color: var(--light);
-        }
-
-        header {
-            background: var(--primary);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-
-        nav {
-            background: white;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-            z-index: 1000;
-        }
-
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .church-card {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0;
-        }
-
-        table td, table th {
-            padding: 10px;
-            border-bottom: 1px solid #eee;
-            text-align: left;
-        }
-
-        .btn-fb {
-            display: inline-block;
-            background: #1877F2;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        .map-container {
-            width: 100%;
-            height: 250px;
-            background: #ddd;
-            border-radius: 5px;
-        }
-
-        .events-section {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #777;
-            font-size: 0.9rem;
-        }
+        :root { --primary: #1a3a5f; --accent: #c5a028; --light: #f8f9fa; --text: #2d3436; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); margin: 0; background-color: var(--light); }
+        header { background: var(--primary); color: white; padding: 3rem 1rem; text-align: center; }
+        nav { background: white; padding: 1rem; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; z-index: 1000; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.9rem; }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
+        .church-card { background: white; border-radius: 12px; padding: 2rem; margin-bottom: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid var(--accent); }
+        h2 { color: var(--primary); margin-top: 0; }
+        .grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+        table td, table th { padding: 12px 8px; border-bottom: 1px solid #edf2f7; text-align: left; }
+        .btn-fb { display: inline-block; background: #1877F2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 15px; transition: opacity 0.2s; }
+        .btn-fb:hover { opacity: 0.9; }
+        .map-frame { width: 100%; height: 200px; border: 0; border-radius: 8px; background: #eee; margin-top: 10px; }
+        .tag { background: #e2e8f0; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; color: var(--primary); }
+        footer { text-align: center; padding: 3rem; color: #a0aec0; font-size: 0.85rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Churches of Samui Island</h1>
-    <p>Mass Schedules & Community Information</p>
+    <h1>Catholic Churches of Samui</h1>
+    <p>Mass Times • Locations • Community</p>
 </header>
 
 <nav>
-    <a href="#church1">Church One</a>
-    <a href="#church2">Church Two</a>
-    <a href="#church3">Church Three</a>
-    <a href="#events">Special Events</a>
+    <a href="#st-anna">St. Anna (Nathon)</a>
+    <a href="#mary-help">Mary Help (Lamai)</a>
+    <a href="#st-peter">St. Peter (Phangan)</a>
+    <a href="#calendar">Yearly Events</a>
 </nav>
 
 <div class="container">
 
-    <section id="church1" class="church-card">
-        <h2>Church Name One</h2>
+    <section id="st-anna" class="church-card">
+        <span class="tag">NATHON DISTRICT</span>
+        <h2>St. Anna's Catholic Church</h2>
         <div class="grid">
             <div>
-                <h3>Mass Schedule</h3>
+                <h3>Sunday Mass</h3>
                 <table>
-                    <tr><th>Day</th><th>Time</th></tr>
-                    <tr><td>Saturday (Vigil)</td><td>18:00</td></tr>
-                    <tr><td>Sunday</td><td>09:00, 11:00</td></tr>
+                    <tr><td>Sunday (Thai)</td><td>08:00 AM</td></tr>
+                    <tr><td>Sunday (English)</td><td>10:30 AM</td></tr>
                 </table>
-                <p><strong>Contact:</strong> +66 XX XXX XXXX</p>
-                <a href="YOUR_FB_LINK_HERE" class="btn-fb">Visit Facebook Page</a>
+                <p><strong>Contact:</strong> 0XX-XXX-XXXX</p>
+                <a href="INSERT_FB_LINK_HERE" class="btn-fb">Church Facebook</a>
             </div>
             <div>
                 <h3>Location</h3>
-                <p>123 Moo 1, Samui Island, Surat Thani</p>
-                <iframe class="map-container" src="https://www.google.com/maps/embed?pb=..." style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <p>Nathon Town, West Coast</p>
+                <div class="map-frame">Map goes here</div>
             </div>
         </div>
     </section>
 
-    <section id="church2" class="church-card">
-        <h2>Church Name Two</h2>
+    <section id="mary-help" class="church-card">
+        <span class="tag">LAMAI BEACH</span>
+        <h2>Mary Help of Christians</h2>
         <div class="grid">
             <div>
-                <h3>Mass Schedule</h3>
+                <h3>Sunday Mass</h3>
                 <table>
-                    <tr><th>Day</th><th>Time</th></tr>
-                    <tr><td>Sunday</td><td>10:00</td></tr>
+                    <tr><td>Sunday (English)</td><td>10:30 AM</td></tr>
                 </table>
-                <p><strong>Contact:</strong> +66 XX XXX XXXX</p>
-                <a href="YOUR_FB_LINK_HERE" class="btn-fb">Visit Facebook Page</a>
+                <p><strong>Contact:</strong> 0XX-XXX-XXXX</p>
+                <a href="INSERT_FB_LINK_HERE" class="btn-fb">Church Facebook</a>
             </div>
             <div>
                 <h3>Location</h3>
-                <p>456 Moo 2, Samui Island, Surat Thani</p>
-                <iframe class="map-container" src="https://www.google.com/maps/embed?pb=..." style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <p>Maret, near Lamai Beach</p>
+                <div class="map-frame">Map goes here</div>
             </div>
         </div>
     </section>
 
-    <section id="church3" class="church-card">
-        <h2>Church Name Three</h2>
+    <section id="st-peter" class="church-card">
+        <span class="tag">KOH PHANGAN</span>
+        <h2>St. Peter's Church</h2>
         <div class="grid">
             <div>
                 <h3>Mass Schedule</h3>
                 <table>
-                    <tr><th>Day</th><th>Time</th></tr>
-                    <tr><td>Sunday</td><td>08:30</td></tr>
+                    <tr><td>Saturday (Vigil)</td><td>06:00 PM</td></tr>
                 </table>
-                <p><strong>Contact:</strong> +66 XX XXX XXXX</p>
-                <a href="YOUR_FB_LINK_HERE" class="btn-fb">Visit Facebook Page</a>
+                <p><strong>Contact:</strong> 0XX-XXX-XXXX</p>
+                <a href="INSERT_FB_LINK_HERE" class="btn-fb">Church Facebook</a>
             </div>
             <div>
                 <h3>Location</h3>
-                <p>789 Moo 3, Samui Island, Surat Thani</p>
-                <iframe class="map-container" src="https://www.google.com/maps/embed?pb=..." style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <p>Haad Rin Area, Koh Phangan</p>
+                <div class="map-frame">Map goes here</div>
             </div>
         </div>
     </section>
 
-    <section id="events" class="events-section">
-        <h2>Special Events & Calendar</h2>
-        <ul>
-            <li><strong>April 12-15:</strong> Easter Celebrations</li>
-            <li><strong>August 15:</strong> Feast Day Festival</li>
-            <li><strong>December 24-25:</strong> Christmas Services</li>
-        </ul>
-        <p><em>Note: Times for special events will be posted on our Facebook pages closer to the date.</em></p>
+    <section id="calendar" class="church-card" style="border-top-color: #2d3436;">
+        <h2>2026 Special Events</h2>
+        <p>Join us for these upcoming celebrations across our island parishes:</p>
+        <table>
+            <tr><td><strong>April 5</strong></td><td>Palm Sunday Services</td></tr>
+            <tr><td><strong>April 12</strong></td><td>Easter Sunday (High Mass)</td></tr>
+            <tr><td><strong>August 15</strong></td><td>Assumption of Mary (Feast Day)</td></tr>
+            <tr><td><strong>December 25</strong></td><td>Christmas Day Celebrations</td></tr>
+        </table>
     </section>
 
 </div>
 
 <footer>
-    <p>&copy; 2026 Churches of Samui Island. All are welcome.</p>
+    <p>© 2026 Catholic Community of Samui Archipelago.<br>Welcoming visitors from around the world.</p>
 </footer>
 
 </body>
