@@ -10,32 +10,24 @@
         body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); margin: 0; background-color: var(--light); }
         header { background: var(--primary); color: white; padding: 3rem 1rem; text-align: center; }
         nav { background: white; padding: 1rem; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; z-index: 1000; }
-        nav a { margin: 0 15px; text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.9rem; }
+        nav a { margin: 0 10px; text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.85rem; }
         .container { max-width: 900px; margin: auto; padding: 20px; }
         .church-card { background: white; border-radius: 12px; padding: 2rem; margin-bottom: 2.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 5px solid var(--accent); }
-        h2 { color: var(--primary); margin-top: 0; }
+        h2 { color: var(--primary); margin-top: 0; font-size: 1.5rem; }
         .grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 30px; }
         @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
         table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
-        table td, table th { padding: 12px 8px; border-bottom: 1px solid #edf2f7; text-align: left; }
-        .btn-fb { display: inline-block; background: #1877F2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 15px; transition: opacity 0.2s; }
+        table td { padding: 10px 5px; border-bottom: 1px solid #edf2f7; }
         
-        /* Map Button Styles */
-        .map-link-btn {
-            display: block;
-            background: #f1f3f4;
-            color: #1a73e8;
-            text-align: center;
-            padding: 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            border: 1px solid #dadce0;
-            margin-top: 10px;
-        }
-        .map-link-btn:hover { background: #e8f0fe; }
+        /* Action Buttons */
+        .btn-action { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-bottom: 10px; transition: transform 0.2s; }
+        .btn-action:active { transform: scale(0.98); }
+        .whatsapp { background: #25D366; color: white; }
+        .line-app { background: #06C755; color: white; }
+        .facebook { background: #1877F2; color: white; }
+        .maps { background: #f1f3f4; color: #1a73e8; border: 1px solid #dadce0; }
         
-        .tag { background: #e2e8f0; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; color: var(--primary); }
+        .tag { background: #e2e8f0; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; color: var(--primary); margin-bottom: 8px; display: inline-block; }
         footer { text-align: center; padding: 3rem; color: #a0aec0; font-size: 0.85rem; }
     </style>
 </head>
@@ -47,10 +39,10 @@
 </header>
 
 <nav>
-    <a href="#st-anna">St. Anna (Nathon)</a>
-    <a href="#mary-help">Mary Help (Chaweng)</a>
-    <a href="#mary-mira">Mary Miraculous (Phangan)</a>
-    <a href="#calendar">Yearly Events</a>
+    <a href="#st-anna">St. Anna</a>
+    <a href="#mary-help">Mary Help</a>
+    <a href="#mary-mira">Phangan</a>
+    <a href="#calendar">Events</a>
 </nav>
 
 <div class="container">
@@ -61,18 +53,15 @@
         <div class="grid">
             <div>
                 <h3>Sunday Mass</h3>
-                <table>
-                    <tr><td>Sunday (Thai)</td><td>08:00 AM</td></tr>
-                </table>
-                <p><strong>Contact:</strong> 02-XXX-XXXX</p>
-                <a href="https://www.facebook.com/p/St-Anna-Catholic-Church-Koh-Samui-Thailand-100082259400936/" class="btn-fb">Church Facebook</a>
+                <table><tr><td>Sunday (Thai)</td><td>08:00 AM</td></tr></table>
+                <p><strong>Contact Us:</strong></p>
+                <a href="https://line.me/ti/p/~YOUR_LINE_ID" class="btn-action line-app">💬 Chat on LINE</a>
+                <a href="https://www.facebook.com/p/St-Anna-Catholic-Church-Koh-Samui-Thailand-100082259400936/" class="btn-action facebook">f Facebook Page</a>
             </div>
             <div>
                 <h3>Location</h3>
                 <p>Nathon Town, West Coast</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=St.+Anna+Catholic+Church+Nathon+Samui" target="_blank" class="map-link-btn">
-                    📍 Open in Google Maps
-                </a>
+                <a href="https://maps.app.goo.gl/YourLink" target="_blank" class="btn-action maps">📍 Open Google Maps</a>
             </div>
         </div>
     </section>
@@ -83,18 +72,15 @@
         <div class="grid">
             <div>
                 <h3>Sunday Mass</h3>
-                <table>
-                    <tr><td>Sunday (English)</td><td>10:30 AM</td></tr>
-                </table>
-                <p><strong>Contact:</strong> 082-169-8295</p>
-                <a href="https://www.facebook.com/stmarychurchsamui/" class="btn-fb">Church Facebook</a>
+                <table><tr><td>Sunday (English)</td><td>10:30 AM</td></tr></table>
+                <p><strong>Contact Us:</strong></p>
+                <a href="https://wa.me/66821698295" class="btn-action whatsapp">📞 WhatsApp: +66 82 169 8295</a>
+                <a href="https://www.facebook.com/stmarychurchsamui/" class="btn-action facebook">f Facebook Page</a>
             </div>
             <div>
                 <h3>Location</h3>
                 <p>Main Road, near Chaweng Beach</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Mary+Help+of+Christians+Church+Samui" target="_blank" class="map-link-btn">
-                    📍 Open in Google Maps
-                </a>
+                <a href="https://maps.app.goo.gl/YourLink" target="_blank" class="btn-action maps">📍 Open Google Maps</a>
             </div>
         </div>
     </section>
@@ -105,25 +91,21 @@
         <div class="grid">
             <div>
                 <h3>Mass Schedule</h3>
-                <table>
-                    <tr><td>Saturday</td><td>09:30 AM</td></tr>
-                </table>
-                <p><strong>Contact:</strong> 082-169-8295</p>
-                <a href="https://www.facebook.com/groups/1284210712630201/" class="btn-fb">Church Facebook</a>
+                <table><tr><td>Saturday</td><td>09:30 AM</td></tr></table>
+                <p><strong>Contact Us:</strong></p>
+                <a href="https://wa.me/66821698295" class="btn-action whatsapp">📞 WhatsApp: +66 82 169 8295</a>
+                <a href="https://www.facebook.com/groups/1284210712630201/" class="btn-action facebook">f Facebook Group</a>
             </div>
             <div>
                 <h3>Location</h3>
                 <p>Haad Rin Area, Koh Phangan</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Mary+of+The+Miraculous+Medal+Koh+Phangan" target="_blank" class="map-link-btn">
-                    📍 Open in Google Maps
-                </a>
+                <a href="https://maps.app.goo.gl/YourLink" target="_blank" class="btn-action maps">📍 Open Google Maps</a>
             </div>
         </div>
     </section>
 
     <section id="calendar" class="church-card" style="border-top-color: #2d3436;">
         <h2>2026 Special Events</h2>
-        <p>Join us for these upcoming celebrations across our island parishes:</p>
         <table>
             <tr><td><strong>April 5</strong></td><td>Palm Sunday Services</td></tr>
             <tr><td><strong>April 12</strong></td><td>Easter Sunday</td></tr>
@@ -135,7 +117,7 @@
 </div>
 
 <footer>
-    <p>© 2026 Catholic Community of Samui and Phangan.<br>Welcoming visitors from around the world.</p>
+    <p>© 2026 Catholic Community of Samui and Phangan.</p>
 </footer>
 
 </body>
