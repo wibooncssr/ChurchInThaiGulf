@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churches of Samui Island</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #d4af37; /* Gold accent */
+            --light: #f4f7f6;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            margin: 0;
+            background-color: var(--light);
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .church-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        table td, table th {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .btn-fb {
+            display: inline-block;
+            background: #1877F2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 250px;
+            background: #ddd;
+            border-radius: 5px;
+        }
+
+        .events-section {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Churches of Samui Island</h1>
+    <p>Mass Schedules & Community Information</p>
+</header>
+
+<nav>
+    <a href="#church1">Church One</a>
+    <a href="#church2">Church Two</a>
+    <a href="#church3">Church Three</a>
+    <a href="#events">Special Events</a>
+</nav>
+
+<div class="container">
+
+    <section id="church1" class="church-card">
+        <h2>Church Name One</h2>
+        <div class="grid">
+            <div>
+                <h3>Mass Schedule</h3>
+                <table>
+                    <tr><th>Day</th><th>Time</th></tr>
+                    <tr><td>Saturday (Vigil)</td><td>18:00</td></tr>
+                    <tr><td>Sunday</td><td>09:00, 11:00</td></tr>
+                </table>
+                <p><strong>Contact:</strong> +66 XX XXX XXXX</p>
+                <a href="YOUR_FB_LINK_HERE" class="btn-fb">Visit Facebook Page</a>
+            </div>
+            <div>
+                <h3>Location</h3>
+                <p>123 Moo 1, Samui Island, Surat Thani</p>
+                <iframe class="map-container" src="https://www.google.com/maps/embed?pb=..." style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="church2" class="church-card">
+        <h2>Church Name Two</h2>
+        <div class="grid">
+            <div>
+                <h3>Mass Schedule</h3>
+                <table>
+                    <tr><th>Day</th><th>Time</th></tr>
+                    <tr><td>Sunday</td><td>10:00</td></tr>
+                </table>
+                <p><strong>Contact:</strong> +66 XX XXX XXXX</p>
+                <a href="YOUR_FB_LINK_HERE" class="btn-fb">Visit Facebook Page</a>
+            </div>
+            <div>
+                <h3>Location</h3>
+                <p>456 Moo 2, Samui Island, Surat Thani</p>
+                <iframe class="map-container" src="https://www.google.com/maps/embed?pb=..." style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="church3" class="church-card">
+        <h2>Church Name Three</h2>
+        <div class="grid">
+            <div>
+                <h3>Mass Schedule</h3>
+                <table>
+                    <tr><th>Day</th><th>Time</th></tr>
+                    <tr><td>Sunday</td><td>08:30</td></tr>
+                </table>
+                <p><strong>Contact:</strong> +66 XX XXX XXXX</p>
+                <a href="YOUR_FB_LINK_HERE" class="btn-fb">Visit Facebook Page</a>
+            </div>
+            <div>
+                <h3>Location</h3>
+                <p>789 Moo 3, Samui Island, Surat Thani</p>
+                <iframe class="map-container" src="https://www.google.com/maps/embed?pb=..." style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="events-section">
+        <h2>Special Events & Calendar</h2>
+        <ul>
+            <li><strong>April 12-15:</strong> Easter Celebrations</li>
+            <li><strong>August 15:</strong> Feast Day Festival</li>
+            <li><strong>December 24-25:</strong> Christmas Services</li>
+        </ul>
+        <p><em>Note: Times for special events will be posted on our Facebook pages closer to the date.</em></p>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Churches of Samui Island. All are welcome.</p>
+</footer>
+
+</body>
+</html>
