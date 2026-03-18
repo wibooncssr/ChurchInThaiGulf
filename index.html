@@ -227,9 +227,7 @@
                 <span class="lang-en">Fr. Michael Meechai Udomdej, C.Ss.R.</span>
                 <span class="lang-th">คพ. มีชัย อุดมเดช, C.Ss.R.</span>
             </p>
-            <a href="mailto:michaelmeechai@gmail.com" class="btn-action maps" style="background: white;">
-                ✉️ michaelmeechai@gmail.com
-            </a>
+
         </div>
 
         <div style="background: #f1f5f9; padding: 15px; border-radius: 8px;">
@@ -241,12 +239,50 @@
                 <span class="lang-en">Fr. Anthony Wiboon Limpanawooth, C.Ss.R.</span>
                 <span class="lang-th">คพ. อันตน วิบูลย์ ลิมปนวุฒิ, C.Ss.R.</span>
             </p>
-            <a href="mailto:wiboon.cssr@gmail.com" class="btn-action maps" style="background: white;">
-                ✉️ wiboon.cssr@gmail.com
-            </a>
+        
         </div>
-    </div>
+    </div> 
+    </section>
+    <section id="contact" class="church-card" style="border-top-color: var(--primary);">
+    <h2>
+        <span class="lang-en">Send a Message to Pastors</span>
+        <span class="lang-th">ส่งข้อความถึงคุณพ่อ</span>
+    </h2>
+    <p style="font-size: 0.9rem; color: #718096; margin-bottom: 20px;">
+        <span class="lang-en">Your message will be sent directly to Fr. Michael and Fr. Anthony.</span>
+        <span class="lang-th">ข้อความของคุณจะถูกส่งตรงถึงคุณพ่อมีชัยและคุณพ่อวิบูลย์</span>
+    </p>
+
+    <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+        
+        <div>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
+                <span class="lang-en">Subject</span><span class="lang-th">หัวข้อเรื่อง</span>
+            </label>
+            <input type="text" name="subject" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+        </div>
+
+        <div>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
+                <span class="lang-en">Your Email</span><span class="lang-th">อีเมลของคุณ</span>
+            </label>
+            <input type="email" name="_replyto" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;" placeholder="example@email.com">
+        </div>
+
+        <div>
+            <label style="display: block; font-weight: bold; margin-bottom: 5px;">
+                <span class="lang-en">Message</span><span class="lang-th">ข้อความ</span>
+            </label>
+            <textarea name="message" rows="5" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;"></textarea>
+        </div>
+
+        <button type="submit" class="btn-action" style="background: var(--primary); color: white; border: none; cursor: pointer; width: 100%;">
+            <span class="lang-en">Send Message</span>
+            <span class="lang-th">ส่งข้อความ</span>
+        </button>
+    </form>
 </section>
+
 <footer>
     <p>© 2026 Catholic Community in the Samui archipelago.</p>
 </footer>
