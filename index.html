@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<section class="church-map-section">
-    <div class="container">
- 
-      <span style="font-style: italic;">...Find the nearest Catholic parish during your visit to the Samui archipelago...</span> <p></p> 
-        <img src="koh-samui-phangan-catholic-churches-map.png.png" alt="Map showing Catholic Church locations in Koh Samui and Koh Phangan, including Nathon, Chaweng, and Haad Rin." style="width:100%; max-width:1200px; height:auto; border: 1px solid #eee; border-radius: 8px;">
-    </div>
-</section>
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Catholic Mass Times Samui & Koh Phangan </title>
+    <title>Catholic Mass Times Samui & Koh Phangan</title>
     <meta name="description" content="Official mass schedules and locations for Catholic churches in Koh Samui and Koh Phangan. Visit St. Anna Nathon, Mary Help of Christians Chaweng, and Mary of the Miraculous Medal.">
     <meta name="keywords" content="Catholic Church Samui, Mass times Koh Samui, St Anna Nathon, Mary Help of Christians Chaweng, Catholic Church Koh Phangan, Sunday Mass Samui">
     <meta property="og:title" content="Catholic Churches of Samui & Phangan">
     <meta property="og:description" content="Find Sunday Mass times and directions for the Catholic community in the Samui archipelago.">
     <meta property="og:url" content="https://wibooncssr.github.io/ChurchInThaiGulf">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">   
+    
     <style>
-         /* Your CSS styling starts here... */
         :root { --primary: #1a3a5f; --accent: #c5a028; --light: #f8f9fa; --text: #2d3436; }
         body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text); margin: 0; background-color: var(--light); }
         header { background: var(--primary); color: white; padding: 3rem 1rem; text-align: center; }
+        
+        /* Language Toggle Styling */
+        .lang-switch { position: fixed; top: 10px; right: 10px; z-index: 2000; background: white; padding: 5px; border-radius: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        .lang-switch button { border: none; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-weight: bold; background: transparent; transition: 0.3s; font-size: 0.8rem; }
+        .lang-switch button.active { background: var(--primary); color: white; }
+
+        /* Logic to hide/show text */
+        [lang="th"] .lang-en { display: none; }
+        [lang="en"] .lang-th { display: none; }
+
         nav { background: white; padding: 1rem; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; z-index: 1000; }
         nav a { margin: 0 10px; text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.85rem; }
         .container { max-width: 900px; margin: auto; padding: 20px; }
@@ -33,9 +36,7 @@
         table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
         table td { padding: 10px 5px; border-bottom: 1px solid #edf2f7; }
         
-        /* Action Buttons */
         .btn-action { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-bottom: 10px; transition: transform 0.2s; }
-        .btn-action:active { transform: scale(0.98); }
         .whatsapp { background: #25D366; color: white; }
         .line-app { background: #06C755; color: white; }
         .facebook { background: #1877F2; color: white; }
@@ -44,120 +45,132 @@
         .tag { background: #e2e8f0; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; color: var(--primary); margin-bottom: 8px; display: inline-block; }
         footer { text-align: center; padding: 3rem; color: #a0aec0; font-size: 0.85rem; }
 
-        /* Styling for the Map Section */
-            .church-map-section {
-                padding: 60px 20px;
-                background-color: #fdfdfd;
-                text-align: center;
-            }
-            .church-map-section h2 {
-                color: var(--primary);
-                margin-bottom: 10px;
-            }
-            .church-map-section p {
-                color: #4a5568;
-                max-width: 600px;
-                margin: 0 auto 30px auto;
-                font-size: 1.1rem;
-            }
+        .church-map-section { padding: 40px 20px; background-color: #fdfdfd; text-align: center; border-bottom: 1px solid #eee; }
     </style>
 </head>
-<body>
+<body lang="en">
+
+<div class="lang-switch">
+    <button onclick="setLanguage('en')" id="btn-en" class="active">English</button>
+    <button onclick="setLanguage('th')" id="btn-th">ไทย</button>
+</div>
 
 <header>
-    <h1>Catholic Churches of Samui & Phangan</h1>
-    <p>Mass Times • Locations • Community</p>
+    <h1>
+        <span class="lang-en">Catholic Churches of Samui & Phangan</span>
+        <span class="lang-th">วัดคาทอลิกในเกาะสมุยและเกาะพะงัน</span>
+    </h1>
+    <p>
+        <span class="lang-en">Mass Times • Locations • Community</span>
+        <span class="lang-th">ตารางมิสซา • สถานที่ตั้ง • ชุมชน</span>
+    </p>
 </header>
 
 <nav>
-    <a href="#st-anna">St. Anna</a>
-    <a href="#mary-help">Mary Help</a>
-    <a href="#mary-mira">Phangan</a>
-    <a href="#calendar">Events</a>
+    <a href="#st-anna"><span class="lang-en">St. Anna</span><span class="lang-th">น.อันนา</span></a>
+    <a href="#mary-help"><span class="lang-en">Mary Help</span><span class="lang-th">แม่พระสงเคราะห์</span></a>
+    <a href="#mary-mira"><span class="lang-en">Phangan</span><span class="lang-th">พะงัน</span></a>
+    <a href="#calendar"><span class="lang-en">Events</span><span class="lang-th">กิจกรรม</span></a>
 </nav>
+
+<section class="church-map-section">
+    <div class="container">
+        <p style="font-style: italic; color: #718096;">
+            <span class="lang-en">Find the nearest Catholic parish during your visit to the Samui archipelago</span>
+            <span class="lang-th">ค้นหาวัดคาทอลิกที่ใกล้ที่สุดระหว่างการเยี่ยมชมหมู่เกาะสมุย</span>
+        </p> 
+        <img src="koh-samui-phangan-catholic-churches-map.png.png" alt="Map of Catholic Churches" style="width:100%; max-width:900px; height:auto; border: 1px solid #eee; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    </div>
+</section>
+
 <section style="background: white; padding: 40px 20px; text-align: center; border-bottom: 1px solid #eee;">
     <div style="max-width: 800px; margin: auto;">
-        <p style="font-size: 1.2rem; color: #4a5568; line-height: 1.8;">
-            Welcome to the <strong>Catholic Community of the Samui Archipelago</strong>. 
-            Whether you are a local resident or a visitor to our beautiful islands, we invite you 
-            to join us for Holy Mass. We provide current schedules for <strong>Catholic Mass in Koh Samui</strong> 
-            at St. Anna’s in Nathon and Mary Help of Christians in Chaweng—which offers a 
-            weekly <strong>Sunday Mass in English</strong>. We also serve the growing 
-            <strong>Catholic community in Koh Phangan</strong> near the Haad Rin area. 
-            Find our mass times, locations, and direct contact links below.
+        <p style="font-size: 1.1rem; color: #4a5568; line-height: 1.8;">
+            <span class="lang-en">Welcome to the <strong>Catholic Community of the Samui Archipelago</strong>. Whether you are a local resident or a visitor, we invite you to join us for Holy Mass.</span>
+            <span class="lang-th">ยินดีต้อนรับสู่ <strong>ชุมชนคาทอลิกแห่งหมู่เกาะสมุย</strong> ไม่ว่าคุณจะเป็นคนในพื้นที่หรือนักท่องเที่ยว เราขอเชิญคุณเข้าร่วมพิธีมิสซากับเรา</span>
         </p>
     </div>
 </section>
+
 <div class="container">
 
     <section id="st-anna" class="church-card">
-        <span class="tag">NATHON DISTRICT</span>
-        <h2>St. Anna's Catholic Church</h2>
+        <span class="tag lang-en">NATHON DISTRICT</span>
+        <span class="tag lang-th">เขตหน้าทอน</span>
+        <h2>
+            <span class="lang-en">St. Anna's Catholic Church</span>
+            <span class="lang-th">วัดคาทอลิกนักบุญอันนา</span>
+        </h2>
         <div class="grid">
             <div>
-                <h3>Sunday Mass</h3>
-                <table><tr><td>Sunday (Thai)</td><td>08:30 AM</td></tr></table>
-                <p><strong>Contact Us:</strong></p>
-                <a href="https://line.me/ti/g/5ec-eeL9sz" class="btn-action line-app">💬 Join LINE Group</a>
-                <a href="https://www.facebook.com/profile.php?id=61581266691902/" class="btn-action facebook">f Facebook Page</a>
+                <h3><span class="lang-en">Sunday Mass</span><span class="lang-th">ตารางมิสซาวันอาทิตย์</span></h3>
+                <table><tr><td><span class="lang-en">Sunday (Thai)</span><span class="lang-th">วันอาทิตย์ (ไทย)</span></td><td>08:30 AM</td></tr></table>
+                <p><strong><span class="lang-en">Contact Us:</span><span class="lang-th">ติดต่อเรา:</span></strong></p>
+                <a href="https://line.me/ti/g/5ec-eeL9sz" class="btn-action line-app">💬 <span class="lang-en">Join LINE Group</span><span class="lang-th">เข้ากลุ่ม LINE</span></a>
+                <a href="https://www.facebook.com/profile.php?id=61581266691902/" class="btn-action facebook">f <span class="lang-en">Facebook Page</span><span class="lang-th">เพจเฟซบุ๊ก</span></a>
             </div>
             <div>
-                <h3>Location</h3>
-                <p>Nathon Town, West Coast</p>
-               <a href="https://maps.app.goo.gl/VveJqBw7NB3i7TjDA" target="_blank" class="btn-action maps">📍 Open in Google Maps</a>
+                <h3><span class="lang-en">Location</span><span class="lang-th">สถานที่ตั้ง</span></h3>
+                <p><span class="lang-en">Nathon Town, West Coast</span><span class="lang-th">ตัวเมืองหน้าทอน, ชายฝั่งตะวันตก</span></p>
+                <a href="https://maps.app.goo.gl/VveJqBw7NB3i7TjDA" target="_blank" class="btn-action maps">📍 <span class="lang-en">Open in Google Maps</span><span class="lang-th">เปิดใน Google Maps</span></a>
             </div>
         </div>
     </section>
 
     <section id="mary-help" class="church-card">
-        <span class="tag">CHAWENG BEACH</span>
-        <h2>Mary Help of Christians Church</h2>
+        <span class="tag lang-en">CHAWENG BEACH</span>
+        <span class="tag lang-th">หาดเฉวง</span>
+        <h2>
+            <span class="lang-en">Mary Help of Christians Church</span>
+            <span class="lang-th">วัดแม่พระองค์อุปถัมภ์</span>
+        </h2>
         <div class="grid">
             <div>
-                <h3>Sunday Mass</h3>
-                <table><tr><td>Sunday (English)</td><td>10:30 AM</td></tr></table>
-                <p><strong>Contact Us:</strong></p>
-                <a href="https://chat.whatsapp.com/BnjyN5sqGd29WhbB0vyUqz" class="btn-action whatsapp">👥 Join WhatsApp Group</a>
-                <a href="https://www.facebook.com/stmarychurchsamui/" class="btn-action facebook">f Facebook Page</a>
+                <h3><span class="lang-en">Sunday Mass</span><span class="lang-th">ตารางมิสซาวันอาทิตย์</span></h3>
+                <table><tr><td><span class="lang-en">Sunday (English)</span><span class="lang-th">วันอาทิตย์ (อังกฤษ)</span></td><td>10:30 AM</td></tr></table>
+                <p><strong><span class="lang-en">Contact Us:</span><span class="lang-th">ติดต่อเรา:</span></strong></p>
+                <a href="https://chat.whatsapp.com/BnjyN5sqGd29WhbB0vyUqz" class="btn-action whatsapp">👥 <span class="lang-en">Join WhatsApp Group</span><span class="lang-th">เข้ากลุ่ม WhatsApp</span></a>
+                <a href="https://www.facebook.com/stmarychurchsamui/" class="btn-action facebook">f <span class="lang-en">Facebook Page</span><span class="lang-th">เพจเฟซบุ๊ก</span></a>
             </div>
             <div>
-                <h3>Location</h3>
-                <p>East Coast, near Chaweng Beach</p>
-                <a href="https://maps.app.goo.gl/5D9refyzdpfwasb18" target="_blank" class="btn-action maps">📍 Open in Google Maps</a>
+                <h3><span class="lang-en">Location</span><span class="lang-th">สถานที่ตั้ง</span></h3>
+                <p><span class="lang-en">East Coast, near Chaweng Beach</span><span class="lang-th">ชายฝั่งตะวันออก, ใกล้หาดเฉวง</span></p>
+                <a href="https://maps.app.goo.gl/5D9refyzdpfwasb18" target="_blank" class="btn-action maps">📍 <span class="lang-en">Open in Google Maps</span><span class="lang-th">เปิดใน Google Maps</span></a>
             </div>
         </div>
     </section>
 
     <section id="mary-mira" class="church-card">
-        <span class="tag">KOH PHANGAN</span>
-        <h2>Mary of the Miraculous Medal Church</h2>
+        <span class="tag lang-en">KOH PHANGAN</span>
+        <span class="tag lang-th">เกาะพะงัน</span>
+        <h2>
+            <span class="lang-en">Mary of the Miraculous Medal Church</span>
+            <span class="lang-th">วัดแม่พระเหรียญอัศจรรย์</span>
+        </h2>
         <div class="grid">
             <div>
-                <h3>Mass Schedule</h3>
-                <table><tr><td>Saturday (English)</td><td>09:30 AM</td></tr></table>
-                <p><strong>Contact Us:</strong></p>
-                <a href="https://chat.whatsapp.com/DHI6JxDwIrrClf2g75kIzg" class="btn-action whatsapp">👥 Join WhatsApp Group</a>
-                <a href="https://www.facebook.com/groups/1284210712630201/" class="btn-action facebook">f Facebook Group</a>
+                <h3><span class="lang-en">Mass Schedule</span><span class="lang-th">ตารางมิสซา</span></h3>
+                <table><tr><td><span class="lang-en">Saturday (English)</span><span class="lang-th">วันเสาร์ (อังกฤษ)</span></td><td>09:30 AM</td></tr></table>
+                <p><strong><span class="lang-en">Contact Us:</span><span class="lang-th">ติดต่อเรา:</span></strong></p>
+                <a href="https://chat.whatsapp.com/DHI6JxDwIrrClf2g75kIzg" class="btn-action whatsapp">👥 <span class="lang-en">Join WhatsApp Group</span><span class="lang-th">เข้ากลุ่ม WhatsApp</span></a>
+                <a href="https://www.facebook.com/groups/1284210712630201/" class="btn-action facebook">f <span class="lang-en">Facebook Group</span><span class="lang-th">กลุ่มเฟซบุ๊ก</span></a>
             </div>
             <div>
-                <h3>Location</h3>
-                <p>Haad Rin Area, Koh Phangan</p>
-                <a href="https://maps.app.goo.gl/kBqVAnZiVJ4izuD49" target="_blank" class="btn-action maps">📍 Open in Google Maps</a>
+                <h3><span class="lang-en">Location</span><span class="lang-th">สถานที่ตั้ง</span></h3>
+                <p><span class="lang-en">Haad Rin Area, Koh Phangan</span><span class="lang-th">บริเวณหาดริ้น, เกาะพะงัน</span></p>
+                <a href="https://maps.app.goo.gl/kBqVAnZiVJ4izuD49" target="_blank" class="btn-action maps">📍 <span class="lang-en">Open in Google Maps</span><span class="lang-th">เปิดใน Google Maps</span></a>
             </div>
         </div>
     </section>
 
     <section id="calendar" class="church-card" style="border-top-color: #2d3436;">
-        <h2>2026 Special Events</h2>
+        <h2><span class="lang-en">2026 Special Events</span><span class="lang-th">กิจกรรมพิเศษปี 2026</span></h2>
         <table>
-            <tr><td><strong>January 1</strong></td><td>New Year's Day  </td></tr> 
-            <tr><td><strong>February 18</strong></td><td>Ash Wenesday  </td></tr> 
-            <tr><td><strong>Thu,Fri,Sat before Easter Sunday</strong></td><td>Holy Week: St.Ann (TH)7:00 PM, Mary Help (En)07.00 PM</td></tr>
-            <tr><td><strong>August 15</strong></td><td>Assumption of Mary</td></tr>
-            <tr><td><strong>December 8</strong></td><td>Immaculate Conception of Mary</td></tr>
-            <tr><td><strong>December 16-23</strong></td><td>Misa de Galo: Mary Help(only) (En)07.00 PM</td></tr> 
-            <tr><td><strong>December 24</strong></td><td>Christmas Vigil: St.Ann (TH)7:00 PM, Mary Help (En)8.30 PM </td></tr>
-            <tr><td><strong>December 25</strong></td><td>Christmas Celebration </td></tr> 
+            <tr><td><strong>Jan 1</strong></td><td><span class="lang-en">New Year's Day</span><span class="lang-th">วันขึ้นปีใหม่</span></td></tr> 
+            <tr><td><strong>Feb 18</strong></td><td><span class="lang-en">Ash Wednesday</span><span class="lang-th">วันพุธรับเถ้า</span></td></tr> 
+            <tr><td><strong>Holy Week</strong></td><td><span class="lang-en">Thu-Sat: St. Ann (TH) 7:00 PM, Mary Help (EN) 7:00 PM</span><span class="lang-th">พฤหัส-เสาร์: น.อันนา (ไทย) 19:00 น., แม่พระสงเคราะห์ (อังกฤษ) 19:00 น.</span></td></tr>
+            <tr><td><strong>Aug 15</strong></td><td><span class="lang-en">Assumption of Mary</span><span class="lang-th">วันแม่พระรับเกียรติยกขึ้นสวรรค์</span></td></tr>
+            <tr><td><strong>Dec 25</strong></td><td><span class="lang-en">Christmas Day</span><span class="lang-th">วันคริสต์มาส</span></td></tr> 
         </table>
     </section>
 
@@ -166,6 +179,17 @@
 <footer>
     <p>© 2026 Catholic Community in the Samui archipelago.</p>
 </footer>
+
+<script>
+    function setLanguage(lang) {
+        document.body.setAttribute('lang', lang);
+        document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('btn-' + lang).classList.add('active');
+        localStorage.setItem('preferredLang', lang);
+    }
+    const savedLang = localStorage.getItem('preferredLang') || 'en';
+    setLanguage(savedLang);
+</script>
 
 </body>
 </html>
