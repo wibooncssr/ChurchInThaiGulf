@@ -22,11 +22,11 @@
         .lang-switch button { border: none; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-weight: bold; background: transparent; transition: 0.3s; font-size: 0.8rem; }
         .lang-switch button.active { background: var(--primary); color: white; }
 
-        /* Logic to hide/show text */
+    
         
         /* ใช้ body[lang="..."] แทน เพื่อให้ตรงกับ JavaScript */
         body[lang="th"] .lang-en { display: none; }
-        body[lang="th"] .lang-th { display: block; } /* เพิ่มบรรทัดนี้เพื่อให้แสดงผลชัวร์ๆ */
+        body[lang="th"] .lang-th { display: block; } 
         
         body[lang="en"] .lang-en { display: block; }
         body[lang="en"] .lang-th { display: none; }
@@ -141,7 +141,10 @@
         <div class="grid">
             <div>
                 <h3><span class="lang-en">Sunday Mass</span><span class="lang-th">ตารางมิสซาวันอาทิตย์</span></h3>
-                <table><tr><td><span class="lang-en">Sunday (Thai)</span><span class="lang-th">วันอาทิตย์ (ไทย)</span></td><td>08:30 AM</td></tr></table>
+                <table>
+                    <tr><td><span class="lang-en">Sunday (Thai)</span><span class="lang-th">วันอาทิตย์ (ไทย)</span></td><td>08:30 AM</td></tr>
+                    <tr><td><span class="lang-en">Weekdays (English)</span><span class="lang-th">วันธรรมดา (อังกฤษ)</span></td><td>06:30 AM</td></tr> 
+                </table>
                 <p><strong><span class="lang-en">Contact Us:</span><span class="lang-th">ติดต่อเรา:</span></strong></p>
                 <a href="https://line.me/ti/g/5ec-eeL9sz" class="btn-action line-app">💬 <span class="lang-en">Join LINE Group</span><span class="lang-th">เข้ากลุ่ม LINE</span></a>
                 <a href="https://www.facebook.com/share/14c2Qt5c6nV/?mibextid=wwXIfr" class="btn-action facebook">f <span class="lang-en">Facebook Page</span><span class="lang-th">เพจเฟซบุ๊ก</span></a>
